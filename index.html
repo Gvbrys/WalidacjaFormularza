@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walidacja formularza</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> 
+    <script src="skrypty/signup-form.js"></script>
+</head>
+<body>
+    <form id="signupForm" method="post" autocomplete="off">
+        <fieldset>
+            <legend>Formularz rejestracyjny</legend>
+            <p>
+                <label for="firstname">Imię</label>
+                <input id="firstname" name="firstname" type="text">
+            </p>
+            <p>
+                <label for="lastname">Nazwisko</label>
+                <input id="lastname" name="lastname" type="text">
+            </p>
+            <p>
+                <label for="username">Nazwa użytkownika</label>
+                <input id="username" name="username" type="text">
+            </p>
+            <p>
+                <label for="password">Hasło</label>
+                <input id="password" name="password" type="password">
+            </p>
+            <p>
+                <label for="confirm_password">Potwierdź hasło</label>
+                <input id="confirm_password" name="confirm_password" type="password">
+            </p>
+            <p>
+                <label for="email">Adres e-mail</label>
+                <input id="email" name="email" type="email">
+            </p>
+            <p>
+                <label for="komentarz">Komentarz (opcjonalnie)</label>
+                <textarea id="komentarz" name="komentarz" rows="4" cols="50" placeholder="Wpisz komentarz..."></textarea>
+            </p>
+            <p>
+                <label for="agree">Zgadzam się z polityką prywatności
+                <input type="checkbox" id="agree" name="agree"></label>
+            </p>
+            <p>
+                <label for="newsletter">Chcę otrzymywać newsletter (opcjonalnie)
+                <input type="checkbox" id="newsletter" name="newsletter"></label>
+            </p>
+
+            <fieldset id="topicsSection" class="hide">
+                <legend>Tematy (wybierz co najmniej dwa)</legend>
+                <p>
+                    <label for="topic_news">
+                        <input type="checkbox" id="topic_news" value="news" name="topics"> Aktualności szkolne
+                    </label>
+                </p>
+                <p>
+                    <label for="topic_tips">
+                        <input type="checkbox" id="topic_tips" value="tips" name="topics"> Porady dla uczniów i rodziców
+                    </label>
+                </p>
+                <p>
+                    <label for="topic_library">
+                        <input type="checkbox" id="topic_library" value="library" name="topics"> Nowości z biblioteki
+                    </label>
+                </p>
+                <p id="topicsError" class="topic-error">Proszę wybrać co najmniej dwa tematy</p>
+            </fieldset>
+
+            <p>
+                <input class="submit" type="submit" value="Zatwierdź">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
